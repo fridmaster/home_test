@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+  <body class="min-h-screen bg-gray-300">
+    <header>
+      <nav class="flex items-center justify-center flex-wrap bg-gray-700 p-6">
+        <div class="flex items-center text-white mr-6">
+          <h2 class="font-semibold text-xl tracking-tight">Weather App</h2>
+        </div>
+      </nav>
+    </header>
+    <main class="flex justify-center mt-10">
+      <div
+        class="bg-white w-full md:w-10/12 xl:w-8/12 rounded overflow-hidden shadow-lg px-6 py-4 flex flex-col"
+      >
+        <section class="flex items-center justify-center gap-2">
+          <span class="text-lg text-gray-700">plese select a town: </span>
+          <div class="w-4/12 inline-block relative">
+            <select
+              id="townsInput"
+              class="appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option>Tel Aviv</option>
+              <option>New York</option>
+            </select>
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+              <svg
+                class="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+        <div class="mt-10">
+          <section id="loader" class="justify-center">
+            <span class="text-blue-600 uppercase text-lg">loading</span>
+          </section>
+          <section id="weatherCardsContainer" class="flex gap-2">
+            <template id="weatherCardTemplate">
+              <div class="rounded shadow-lg px-6 py-4 bg-white w-64">
+                <div data-card="dayText" class="text-gray-600"></div>
+                <div class="mt-4">
+                  <h3 class="text-sm text-gray-600">temperature</h3>
+                  <div class="uppercase text-sm flex gap-4">
+                    <span data-card="dayTemp" class="text-blue-500"></span>
+                    <span class="text-blue-800"></span>
+                  </div>
+                </div>
+                <div data-card="footer" class="mt-4">
+                  good day for traveling
+                </div>
+              </div>
+            </template>
+          </section>
+       
+        </div>
+        <div class="mt-10">
+          <selection id="filmSuggestionContainer" class="flex gap-10">
+            <template id="filmSuggestionCard">
+              <div class="rounded shadow-lg px-6 py-4 bg-white w-64">
+                <h1>Name:</h1>
+                <h3 data-card="filmTitle"  class="text-gray-600">Name:</h3>
+                <div class="mt-4">
+                  Year:
+                  <div class="uppercase text-sm flex gap-4" data-card="filmYear">
+                  
+                  </div>
+                </div>
+                <div data-card="filmPlot" class="mt-4">
+                </div>
+              </div>
+            </template>
+            <span class="text-blue-600 uppercase text-lg"></span>
+
+          </selection>
+        </div>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

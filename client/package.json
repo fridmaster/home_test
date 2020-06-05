@@ -1,0 +1,28 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "tailwind build src/tailwind.base.css - src/tailwind.css",
+    "preinstall": "npm run tailwind",
+    "build": "parcel build src/index.html --out-dir public --no-cache",
+    "prestart": "npm run tailwind",
+    "start": "parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "eslint": "^7.1.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.0",
+    "parcel": "^1.12.4",
+    "postcss-modules": "^2.0.0",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^1.4.6"
+  }
+}
