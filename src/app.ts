@@ -16,7 +16,7 @@ app.get('/weather', cors(), async (req, res) => {
     }
     let weather = await new Requester(req, res).getWeather(city);
     WeatherStorage.add(city, weather);
-    res.send(weather);
+    res.send(JSON.stringify(weather));
 })
 
 app.get('/film', cors(), async (req, res) => {

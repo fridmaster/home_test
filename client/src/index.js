@@ -1,22 +1,25 @@
-import { default as forcastData } from "./forcastMock.json";
 import {getForecast, getFilm} from './httpService';
-
-// import { getForecast } from './httpService';
 
 const loaderEl = document.getElementById("loader");
 
 document.getElementById("townsInput").addEventListener("change", (e) => {
   const city = e.target.value;
   showLoader();
-  // cleanPrivios();
+  cleanPrivios();
   getForecast(city)
     .then(createForecastCardList)
     .then(hideLoader);
-
 });
 
+function cleanPrivios(){
+  const weatherSelection = document.querySelector("#weatherCardsContainer");
+  const filmSection = document.querySelector("#filmSuggestionContainer");
+  filmSection.innerHTML = '';
+  weatherSelection.innerHTML = '';
+}
 
 function createForecastCardList(dayList) {
+  console.log(dayList)
   const section = document.querySelector("#weatherCardsContainer");
   const template = document.querySelector("#weatherCardTemplate");
   for (const day of dayList) { 
@@ -34,6 +37,7 @@ function createForecastCardList(dayList) {
       getFilm().then(showFilm)
     })
     if (Math.floor(day.main.temp) > 25) {
+      footer.innerHTML = '';
       footer.appendChild(btn);
     }
     section.appendChild(clone);

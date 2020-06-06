@@ -19,7 +19,7 @@
         class="bg-white w-full md:w-10/12 xl:w-8/12 rounded overflow-hidden shadow-lg px-6 py-4 flex flex-col"
       >
         <section class="flex items-center justify-center gap-2">
-          <span class="text-lg text-gray-700">plese select a town: </span>
+          <span class="text-lg text-gray-700">plese select a city: </span>
           <div class="w-4/12 inline-block relative">
             <select
               id="townsInput"
@@ -27,6 +27,7 @@
             >
               <option>Tel Aviv</option>
               <option>New York</option>
+              <option>Samara</option>
             </select>
             <div
               class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
@@ -45,48 +46,49 @@
         </section>
         <div class="mt-10">
           <section id="loader" class="justify-center">
-            <span class="text-blue-600 uppercase text-lg">loading</span>
           </section>
           <section id="weatherCardsContainer" class="flex gap-2">
-            <template id="weatherCardTemplate">
-              <div class="rounded shadow-lg px-6 py-4 bg-white w-64">
-                <div data-card="dayText" class="text-gray-600"></div>
-                <div class="mt-4">
-                  <h3 class="text-sm text-gray-600">temperature</h3>
-                  <div class="uppercase text-sm flex gap-4">
-                    <span data-card="dayTemp" class="text-blue-500"></span>
-                    <span class="text-blue-800"></span>
-                  </div>
-                </div>
-                <div data-card="footer" class="mt-4">
-                  good day for traveling
-                </div>
-              </div>
-            </template>
+           
           </section>
        
         </div>
         <div class="mt-10">
           <selection id="filmSuggestionContainer" class="flex gap-10">
-            <template id="filmSuggestionCard">
-              <div class="rounded shadow-lg px-6 py-4 bg-white w-64">
-                <h1>Name:</h1>
-                <h3 data-card="filmTitle"  class="text-gray-600">Name:</h3>
-                <div class="mt-4">
-                  Year:
-                  <div class="uppercase text-sm flex gap-4" data-card="filmYear">
-                  
-                  </div>
-                </div>
-                <div data-card="filmPlot" class="mt-4">
-                </div>
-              </div>
-            </template>
+         
             <span class="text-blue-600 uppercase text-lg"></span>
 
           </selection>
         </div>
       </div>
+      <template id="weatherCardTemplate">
+        <div class="rounded shadow-lg px-6 py-4 bg-white w-64">
+          <div data-card="dayText" class="text-gray-600"></div>
+          <div class="mt-4">
+            <h3 class="text-sm text-gray-600">temperature</h3>
+            <div class="uppercase text-sm flex gap-4">
+              <span data-card="dayTemp" class="text-blue-500"></span>
+              <span class="text-blue-800"></span>
+            </div>
+          </div>
+          <div data-card="footer" class="mt-4">
+            good day for traveling
+          </div>
+        </div>
+      </template>
+      <template id="filmSuggestionCard">
+        <div class="rounded shadow-lg px-6 py-4 bg-white w-64">
+          <h1>Name:</h1>
+          <h3 data-card="filmTitle"  class="text-gray-600">Name:</h3>
+          <div class="mt-4">
+            Year:
+            <div class="uppercase text-sm flex gap-4" data-card="filmYear">
+            
+            </div>
+          </div>
+          <div data-card="filmPlot" class="mt-4">
+          </div>
+        </div>
+      </template>
     </main>
     <script src="./index.js"></script>
   </body>
